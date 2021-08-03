@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RabbitMQExcelApp.Models;
+using RabbitMQExcelApp.Services;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -17,11 +18,13 @@ namespace RabbitMQExcelApp.Controllers
     {
         private readonly AppDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly RabbitMQPublisher _rabbitMQPublisher;
 
-        public ProductController(AppDbContext context, UserManager<IdentityUser> userManager)
+        public ProductController(AppDbContext context, UserManager<IdentityUser> userManager, RabbitMQPublisher rabbitMQPublisher)
         {
             _context = context;
             _userManager = userManager;
+            _rabbitMQPublisher = rabbitMQPublisher;
         }
 
         // GET: /<controller>/
