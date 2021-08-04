@@ -13,6 +13,7 @@
     <None Remove="Views\Account\" />
     <None Remove="Views\Product\" />
     <None Remove="Services\" />
+    <None Remove="Hub\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
@@ -29,6 +30,7 @@
     <Folder Include="Views\Product\" />
     <Folder Include="wwwroot\files\" />
     <Folder Include="Services\" />
+    <Folder Include="Hub\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\files\" />
