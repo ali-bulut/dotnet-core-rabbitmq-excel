@@ -58,7 +58,7 @@ namespace RabbitMQExcelApp.Controllers
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
 
-            var data = await _context.UserFiles.Where(x => x.UserId == user.Id).ToListAsync();
+            var data = await _context.UserFiles.Where(x => x.UserId == user.Id).OrderByDescending(x => x.Id).ToListAsync();
 
             return View(data);
         }
